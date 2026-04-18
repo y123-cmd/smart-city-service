@@ -24,6 +24,7 @@ public class AggregatedConsumption {
     @Enumerated(EnumType.STRING)
     @Column(name = "provider_name",nullable = false,length = 20)
     private ProviderName providerName;
+
     @Column(name = "total_consumption_kwh", nullable = false, precision = 15, scale = 2)
     private BigDecimal totalConsumptionKwh;
 
@@ -32,6 +33,9 @@ public class AggregatedConsumption {
 
     @Column(name = "average_consumption", nullable = false, precision = 10, scale = 2)
     private BigDecimal averageConsumption;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal cityTotalConsumptionKwh;
 
     @Column(name = "aggregation_date", nullable = false)
     private LocalDate aggregationDate;
